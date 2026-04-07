@@ -28,6 +28,8 @@ urlpatterns = [
     path("posts/", include("posts.urls")), 
 
     path('create/', views.create, name='create'),  # 새 글 작성 페이지 URL
+
+    path('accounts/',include('accounts.urls', namespace='accounts')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
