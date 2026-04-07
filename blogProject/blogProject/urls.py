@@ -30,6 +30,9 @@ urlpatterns = [
     path('create/', views.create, name='create'),  # 새 글 작성 페이지 URL
 
     path('accounts/',include('accounts.urls', namespace='accounts')),
+
+    # allauth를 사용하면 로그인,회원가입, 아이디/비밀번호 찾기 등 다양한 기능이 제공
+    path('authaccounts/', include('allauth.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
